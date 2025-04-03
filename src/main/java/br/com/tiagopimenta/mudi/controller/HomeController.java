@@ -15,7 +15,7 @@ import br.com.tiagopimenta.mudi.repository.PedidoRepository;
 public class HomeController {
 	
 	@Autowired
-	private PedidoRepository pedidoRepository;
+	private PedidoRepository repository;
 	
 	@GetMapping("/home")
 	public String home(Model model) {
@@ -29,7 +29,7 @@ public class HomeController {
 //		
 //		List<Pedido> pedidos = Arrays.asList(pedido);
 		
-		List<Pedido> pedidos = pedidoRepository.findAll();
+		List<Pedido> pedidos = repository.findAll();
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
