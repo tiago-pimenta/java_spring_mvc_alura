@@ -1,12 +1,19 @@
 package br.com.tiagopimenta.mudi.dto;
 
 import br.com.tiagopimenta.mudi.model.Pedido;
+import jakarta.validation.constraints.NotBlank;
 
 public class RequisicaoNovoPedido {
 
+	@NotBlank
 	private String nomeProduto;
+	
+	@NotBlank
 	private String urlProduto;
+	
+	@NotBlank
 	private String urlImagem;
+	
 	private String descricao;
 
 	public String getNomeProduto() {
