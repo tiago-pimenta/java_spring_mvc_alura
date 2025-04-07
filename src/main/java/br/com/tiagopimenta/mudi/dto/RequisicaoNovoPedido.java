@@ -2,6 +2,7 @@ package br.com.tiagopimenta.mudi.dto;
 
 import br.com.tiagopimenta.mudi.model.Pedido;
 import br.com.tiagopimenta.mudi.model.StatusPedido;
+
 import jakarta.validation.constraints.NotBlank;
 
 public class RequisicaoNovoPedido {

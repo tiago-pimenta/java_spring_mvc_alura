@@ -20,7 +20,7 @@ import br.com.tiagopimenta.mudi.repository.PedidoRepository;
 public class HomeController {
 	
 	@Autowired
-	private PedidoRepository repository;
+	private PedidoRepository pedidoRepository;
 	
 	@GetMapping
 	public String home(Model model) {
@@ -34,7 +34,7 @@ public class HomeController {
 //		
 //		List<Pedido> pedidos = Arrays.asList(pedido);
 		
-		List<Pedido> pedidos = repository.findAll();
+		List<Pedido> pedidos = pedidoRepository.findAll();
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
@@ -54,7 +54,7 @@ public class HomeController {
 	@GetMapping("/{status}")
 	public String porStatus(@PathVariable("status") String status, Model model) {
 		
-		List<Pedido> pedidos = repository.findByStatus(StatusPedido.valueOf(status.toUpperCase()));
+		List<Pedido> pedidos = pedidoRepository.findByStatus(StatusPedido.valueOf(status.toUpperCase()));
 		model.addAttribute("pedidos", pedidos);
 		model.addAttribute("status", status);
 		
