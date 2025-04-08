@@ -1,5 +1,6 @@
 package br.com.tiagopimenta.mudi.controller;
 
+import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class HomeController {
 	private PedidoRepository pedidoRepository;
 	
 	@GetMapping
-	public String home(Model model) {
+	public String home(Model model, Principal principal) {
 		
 //		Pedido pedido = new Pedido();
 //		
@@ -34,7 +35,7 @@ public class HomeController {
 //		
 //		List<Pedido> pedidos = Arrays.asList(pedido);
 		
-		List<Pedido> pedidos = pedidoRepository.findAll();
+		List<Pedido> pedidos = pedidoRepository.findAllByUsuario(principal.getName());
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
