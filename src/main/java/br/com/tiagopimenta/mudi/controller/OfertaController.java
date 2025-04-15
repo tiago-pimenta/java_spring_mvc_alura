@@ -11,7 +11,7 @@ public class OfertaController {
 	@GetMapping("")
 	public String getFormularioParaOfertas() {
 		
-		return "oferta/home"
+		return "oferta/home";
 		
 	}
 	

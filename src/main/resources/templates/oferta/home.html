@@ -2,11 +2,11 @@
 	
 	<head th:replace="~{base :: head}"></head>
 	
-	<body>
+	<body onload="onLoad()">
 		
 		<div th:replace="~{base :: logo}"></div>
 
-		<div class="container">
+		<div class="container" id="ofertas">
 			
 			<div th:replace="~{base :: titulo('Últimos Pedidos')}"></div>
 			
@@ -39,5 +39,23 @@
 				</div>
 			</div>
 		</div>
+		
+		<script>
+		
+			function onLoad() {
+
+				var app = new Vue({
+					el : '#ofertas',
+					data : {
+						pedidos : []
+					}
+				});
+
+			}
+			
+		</script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		
 	</body>
 </html>
