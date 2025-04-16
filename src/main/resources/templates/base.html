@@ -1,7 +1,7 @@
 <head th:fragment="head">
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	
-	<link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Handlee&display=swap" rel="stylesheet">
 	
 	<style>
 		.logo-container {
@@ -13,7 +13,7 @@
 		
 		.logo {
 		
-			font-family: "Handlee", cursive;
+			font-family: 'Handlee', cursive;
 			font-size: 2.5rem;
 		
 		}
@@ -23,7 +23,7 @@
 
 <div th:fragment="logo" class="">
 
-	<div class="row logo-container mb-3 p-3 d-flex justify-content-between">
+	<div class="logo-container p-3 d-flex justify-content-between">
 		
 		<span class="logo ml-2">mudi</span>
 		<span class="mt-3 mr-2">
@@ -34,7 +34,7 @@
 		
 	</div>
 	
-	<div class="row" sec:authorize="!isAuthenticated()">
+	<div sec:authorize="isAuthenticated()">
 		
 		<div class="col">
 			
@@ -42,7 +42,7 @@
 				
 				<a class="nav-link" th:href="@{/home}">Home</a>
 				<a class="nav-link" th:href="@{/usuario/pedido}">Meus Pedidos</a>
-				
+			  <a class="nav-link" th:href="@{/oferta}">Faça sua Oferta</a>
 			</nav>
 			
 		</div>
