@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import br.com.tiagopimenta.mudi.model.Oferta;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 public class RequisicaoNovaOferta {
 	
@@ -12,8 +14,12 @@ public class RequisicaoNovaOferta {
 
 	private Long pedidoId;
 	
+	@Pattern(regexp = "^\\d+(\\.\\d+{2})?$")
+	@NotNull
 	private String valor;
 	
+	@Pattern(regexp = "^\\d{2}/\\d{2}/\\d{4}$")
+	@NotNull
 	private String dataDaEntrega;
 	
 	private String comentario;
